@@ -1,0 +1,24 @@
+miriam@miriampc:~$ mkdir test-repo1
+miriam@miriampc:~$ ls
+miriam@miriampc:~$ cd test-repo1
+miriam@miriampc:~/test-repo1$ git init
+miriam@miriampc:~/test-repo1$ git remote add origin https://github.com/miriamMota/test-repo1
+miriam@miriampc:~/test-repo1$ git add .
+miriam@miriampc:~/test-repo1$ git commit -m "afegir arxius"
+miriam@miriampc:~/test-repo1$ git push -u origin master
+
+Modifiquem arxiu 
+miriam@miriampc:~/test-repo1$ git add -A
+miriam@miriampc:~/test-repo1$ git commit -m "modificar untitled"
+
+
+
+Per crear una branca nova: 
+miriam@miriampc:~/test-repo1$ git checkout -b branchmimi 
+Veure en quina branca estem
+miriam@miriampc:~/test-repo1$ git branch
+Tornar a la branca "master"
+miriam@miriampc:~/test-repo1$ git checkout master
+miriam@miriampc:~/test-repo1$ git branch
+
+
