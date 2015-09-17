@@ -13,9 +13,9 @@
 >git config –list
 
 * Nou compte GitHub
-	*Creem repositori
-	*Creem copia local del repositori
-	*OPCIO A (quan encara no hem inclos res) 
+	* Creem repositori
+	* Creem copia local del repositori
+	* OPCIO A (quan encara no hem inclos res) 
 	>mkdir /nomRepo
 
 	>cd nomRepo
@@ -24,30 +24,31 @@
 	
 	>git remote add origin https://github.com/UsuariGithub/nomRepo.git
 	
-	
-	*OPCIO B ( clonar un repositori del GitHub)
+	* OPCIO B ( clonar un repositori del GitHub)
 	>git clone https://github.com/UsuariGithub/nomRepo.git
+
 	>git init 
 
-*Afegirm arxius a repositori local I volem actualitzar-ho (SEMPRE 3 PASOS)
+* Afegirm arxius a repositori local I volem actualitzar-ho (SEMPRE 3 PASOS)
 	> git add .  (afegeix tots els arxius nous)  /   -u (actualitza fitxer que han cambiat de nom o eliminats) / -A  (fa totes dues coses)
-	Fem un commit
-		git commit -m “missatge”
-	Ho actualitzem a github
-		git push -u origin master
-Afegir arxiu en github i que es mostri en local
-git pull –rebase
+	* Fem un commit
+	>git commit -m “missatge”
+	* Ho actualitzem a github
+	>git push -u origin master
+* Afegir arxiu en github i que es mostri en local
+> git pull –rebase
 
-Afegir branca 
- 	git checkout -b branchmimi 
-Veure en quina branca estem
-	 git branch
-Actualitzar branca al github
-	 git push origin branchmimi
-Canviar de branca 
-	git checkout master
+* Afegir branca 
+ 	>git checkout -b branchmimi 
+	* Veure en quina branca estem
+	>git branch
+	* Actualitzar branca al github
+	>git push origin branchmimi
+	* Canviar de branca 
+	> git checkout master
 
 
-Desfer de git init
+* Desfer de git init
+rm -rf .git
 
-** Una carpeta nova no la agafa be 
+**Una carpeta nova no la agafa be si no hi ha cap document dins**
