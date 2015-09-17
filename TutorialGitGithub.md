@@ -87,5 +87,7 @@ sudo apt-get install git
 <br>
 
 Altre documentacio: 
+
 [Tutorial Basic](http://rogerdudler.github.io/git-guide/index.es.html)
+
 [Git Avançat](https://git-scm.com/book/es/v1)
