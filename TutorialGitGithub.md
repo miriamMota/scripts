@@ -83,3 +83,9 @@ sudo apt-get install git
 <br>
 
 **Una carpeta nova no la agafa be si no hi ha cap document dins**
+
+<br>
+
+Altre documentacio: 
+[Tutorial Basic](http://rogerdudler.github.io/git-guide/index.es.html)
+[Git Avançat](https://git-scm.com/book/es/v1)
