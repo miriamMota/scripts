@@ -17,9 +17,13 @@
 	*Creem copia local del repositori
 	*OPCIO A (quan encara no hem inclos res) 
 	>mkdir /nomRepo
+
 	>cd nomRepo
+	
 	>git init 
+	
 	>git remote add origin https://github.com/UsuariGithub/nomRepo.git
+	
 	
 	*OPCIO B ( clonar un repositori del GitHub)
 	>git clone https://github.com/UsuariGithub/nomRepo.git
