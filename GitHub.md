@@ -1,6 +1,6 @@
 ## Instalació i utilització Git /Github
 
-<p>This has been indented 4 spaces.</p>
+>This has been indented 4 spaces
 * Instalar Git:
 sudo apt-get update
 sudo apt-get install git
