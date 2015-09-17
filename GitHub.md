@@ -1,7 +1,7 @@
 ## Instalació i utilització Git /Github
 
 
-* Instalar Git:
+1.  Instalar Git:
 >sudo apt-get update
 >sudo apt-get install git
 
@@ -12,9 +12,13 @@
 * Comprovem dades
 >git config –list
 
-* Nou compte GitHub
-	* Creem repositori
-	* Creem copia local del repositori
+2. Nou compte [GitHub](https://github.com) 
+	
+
+
+3. Combinem Git - Github
+* Creem repositori a Github
+* Creem copia local del repositori
 	* OPCIO A (quan encara no hem inclos res) 
 	>mkdir /nomRepo
 
