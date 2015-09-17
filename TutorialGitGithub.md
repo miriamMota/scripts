@@ -1,7 +1,7 @@
 ## Instalació i utilització Git /Github
 
 
-1.  Instalar [Git](https://git-scm.com/book/es/v1/Empezando-Instalando-Git):
+1.  Instalar [Git](https://git-scm.com/book/es/v1/Empezando-Instalando-Git) a Linux:
 ```
 sudo apt-get update
 sudo apt-get install git
