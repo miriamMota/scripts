@@ -83,7 +83,8 @@ sudo apt-get install git
 ```rm -rf .git```
 
 * Altres instruccions
-	* ``` git status```
+	* git config --global color.ui true 
+	* Que ha canviat des de l'ultim commit``` git status```
 	* ```git log```
 
 
