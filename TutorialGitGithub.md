@@ -24,7 +24,9 @@ sudo apt-get install git
 <br>
 
 3. Combinem Git - Github
-* Creem repositori a Github
+* Creem repositori a Github,si el creem des de el ordinador hem de seguir els seguents pasos:
+```git remote add origin https://github.com/UsuariGithub/try_git.git```
+
 * Creem copia local del repositori
 	* OPCIO A (quan encara no hem inclos res) 
 	```
