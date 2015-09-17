@@ -44,17 +44,17 @@ sudo apt-get install git
 <br>
 
 * Actualitzar canvis fets en local a GitHub (SEMPRE 3 PASOS)
-    1. Afegim o modifiquem arxiu
+	1. Afegim o modifiquem arxiu
     ```
     git add . (afegeix tots els arxius nous)
               -u ( actualitza fitxers que han canviat de nom o eliminats)
               -A (fa totes dues coses)
     ```
-    2. Fem un commit
+  	2. Fem un commit
     ```
     git commit -m "missatge de canvis"
     ```
-    3. Ho actualitzem a github
+   	3. Ho actualitzem a github
     ```
     git push 
     o
