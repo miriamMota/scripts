@@ -80,6 +80,11 @@ sudo apt-get install git
 * Desfer un git init
 ```rm -rf .git```
 
+* Altres instruccions
+	* ``` git status```
+	* ```git log```
+
+
 <br>
 
 **Una carpeta nova no la agafa be si no hi ha cap document dins**
