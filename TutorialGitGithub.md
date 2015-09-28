@@ -60,6 +60,7 @@ sudo apt-get install git
     o
     git push -u origin master
     ```
+    (en el cas de que dones algún error, podem fer: ``` git pull --rebase``` i llavors un push )
     
 <br>
 	
