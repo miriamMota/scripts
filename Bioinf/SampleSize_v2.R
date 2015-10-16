@@ -7,13 +7,24 @@ library(gdata) # for nobs()
 #################
 ## ExpressAndTop.Estudi.P.L.T12vsN.L.T12.csv 
 #################
-
+###
+### TT= TopTable completa
+### grupo1 = part esquerra de la comparació
+### grupo2 = part dreta de la comparació
+#################
+###
+### Per defecte, agafa:
+###  els 100 primers gens de la top table
+###  un foldChange de 2 
+###  la desviacions corresponents a la nostra topTable
+###
+#################
 sampleSize <- function(TT,grupo1,grupo2){
 TT_selec <- TT[1:100,]
 #TT_selec <- TT
 sdc1 <- unlist(apply(TT_selec[,grep(paste(grupo1, "|", grupo2,sep=""),names(TT_selec))],1,sd,na.rm=TRUE)) ## sd per gen
 length(sdc1)                    # 27
-FC1 <- mean(abs(TT_selec$logFC)); FC1  
+lFC1 <- mean(abs(TT_selec$logFC)); lFC1  
 SD1 <- mean(sdc1); SD1          
 
 #fixem parametres
@@ -30,7 +41,7 @@ ssize.plot(all.size, lwd=2, col="magenta", xlim=c(1,20))
 xmax <- par("usr")[2]-1;
 ymin <- par("usr")[3] + 0.05
 legend(x=xmax, y=ymin,
-       legend= strsplit( paste("log fold change=",round(fold.change,2),",",
+       legend= strsplit( paste("fold change=",round(fold.change,2),",",
                                "alpha=", sig.level, ",",
                                "power=",power,",",
                                "# genes=",nobs(sdc1) , sep=''), "," )[[1]],
