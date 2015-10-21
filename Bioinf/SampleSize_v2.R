@@ -19,11 +19,13 @@ library(gdata) # for nobs()
 ###  la desviacions corresponents a la nostra topTable
 ###
 #################
+
+
 sampleSize <- function(TT,grupo1,grupo2){
 TT_selec <- TT[1:100,]
 #TT_selec <- TT
 sdc1 <- unlist(apply(TT_selec[,grep(paste(grupo1, "|", grupo2,sep=""),names(TT_selec))],1,sd,na.rm=TRUE)) ## sd per gen
-length(sdc1)                    # 27
+length(sdc1)                    
 lFC1 <- mean(abs(TT_selec$logFC)); lFC1  
 SD1 <- mean(sdc1); SD1          
 
