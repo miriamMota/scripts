@@ -35,6 +35,7 @@ sudo apt-get install git
 	cd nomRepo
 	git init 
 	git remote add origin https://github.com/UsuariGithub/nomRepo.git
+	git pull --rebase origin master
 	```
 	* OPCIO B ( clonar un repositori del GitHub)
 	```
