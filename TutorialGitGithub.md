@@ -1,7 +1,7 @@
-## Instalació i utilització Git /Github
+# Instalació i utilització Git /Github
 
 
-1.  Instalar [Git](https://git-scm.com/book/es/v1/Empezando-Instalando-Git) a Linux:
+#.  Instalar [Git](https://git-scm.com/book/es/v1/Empezando-Instalando-Git) a Linux:
 ```
 sudo apt-get update
 sudo apt-get install git
@@ -19,14 +19,15 @@ sudo apt-get install git
 <br>
 
 
-2. Nou compte [GitHub](https://github.com) 
+#. Nou compte [GitHub](https://github.com) 
 
 <br>
 
-3. Combinem Git - Github
-* Creem repositori a Github,si el creem des de el ordinador hem de seguir els seguents pasos:
+#. Combinem Git - Github
+1. Creem repositori des de el ordinador hem de seguir els seguents pasos:
 ```git remote add origin https://github.com/UsuariGithub/try_git.git```
 
+2. Creem repositori a Github
 * Creem copia local del repositori
 	* OPCIO A (quan encara no hem inclos res) 
 	```
