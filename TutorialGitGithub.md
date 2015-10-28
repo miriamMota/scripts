@@ -24,7 +24,7 @@ sudo apt-get install git
 <br>
 
 #. Combinem Git - Github
-1. Creem repositori des de el ordinador hem de seguir els seguents pasos:
+1. Creem repositori des de el ordinador:
 ```git remote add origin https://github.com/UsuariGithub/try_git.git```
 
 2. Creem repositori a Github
@@ -61,12 +61,12 @@ sudo apt-get install git
     o
     git push -u origin master
     ```
-    (en el cas de que dones algún error, podem fer: ``` git pull --rebase``` i llavors un push )
+    (en el cas de que dones algún error, podem fer: ```git pull --rebase origin master``` i llavors un push )
     
 <br>
 	
 * Actualitzar canvis fets en GitHub a local
-  ```   git pull –rebase   ```
+  ```    git pull --rebase origin master  ```
   
   <br>
   
