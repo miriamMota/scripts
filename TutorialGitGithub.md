@@ -45,6 +45,7 @@ sudo apt-get install git
 	```
 	
 <br>
+4. Actualizar canvis:
 
 * Actualitzar canvis fets en local a GitHub (SEMPRE 3 PASOS)
 	1. Afegim o modifiquem arxiu
