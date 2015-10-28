@@ -40,6 +40,7 @@ sudo apt-get install git
 	* OPCIO B ( clonar un repositori del GitHub)
 	```
 	git clone https://github.com/UsuariGithub/nomRepo.git
+	cd nomRepo
 	git init 
 	```
 	
