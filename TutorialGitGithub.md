@@ -100,6 +100,7 @@ sudo apt-get install git
 <br>
 
 Altre documentacio: 
+[Rstudio-Git-Github] (http://www.r-bloggers.com/rstudio-and-github/)
 
 [Tutorial online] (https://try.github.io/levels/1/challenges/1)
 
