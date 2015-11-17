@@ -1,4 +1,6 @@
-
+# Convertir variables a clase corresponent
+# dat = Base de dades, data.frame
+# nlev = màxim de nivells per a que la variable es consideri factor
 reclass_lev <- function(dat,nlev)
 {
 tipus <- apply(dat,2, function(x) 
@@ -6,6 +8,7 @@ ifelse((dim(table(x))<nlev ), "cat","cont")) ## comprobem cat o cont
 for ( i in 1:length(tipus)) ifelse(tipus[i] == "cont", dat[,i]<- as.numeric(as.character(dat[,i])), dat[,i] <- as.factor(dat[,i]))
 return(dat)
 }
+
 ################################################################################
 ####################
 ##### geneSelectable
