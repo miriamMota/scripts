@@ -1,4 +1,11 @@
 
+reclass_lev <- function(dat,nlev)
+{
+tipus <- apply(dat,2, function(x) 
+ifelse((dim(table(x))<nlev ), "cat","cont")) ## comprobem cat o cont
+for ( i in 1:length(tipus)) ifelse(tipus[i] == "cont", dat[,i]<- as.numeric(as.character(dat[,i])), dat[,i] <- as.factor(dat[,i]))
+return(dat)
+}
 ################################################################################
 ####################
 ##### geneSelectable
@@ -59,6 +66,7 @@ genesSelectable <- function (topTab, adj0, adj1, adj2, P1, P2,FC=1)
 numGeneChangedFC<- function (filenames,comparisons, FC=0, adj0=0.01, adj1=0.05, adj2=0.25, P1=0.01, P2=0.05)
 {
   dat<-lapply(filenames, read.csv2,header=T)
+  dat <- lapply(dat,reclass_lev,nlev=2)
   res<-data.frame(lapply(dat, genesSelectable,adj0=adj0, adj1=adj1, adj2=adj2, P1=P1, P2=P2,FC=FC))
   colnames(res) <- comparisons
   row.names(res) <- c("upReg-B>0", "downReg-B>0",
