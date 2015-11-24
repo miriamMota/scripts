@@ -1,6 +1,12 @@
+############################
+## Miriam Mota Foix
+## 24.11.2015
+############################
+
+
+## Funcions necessaries per extreure la llista d'elements 
+## tant x com y en tots els casos es una llista de caracters.
 Intersect <- function (x) {  
-  # Multiple set version of intersect
-  # x is a list
   if (length(x) == 1) {
     unlist(x)
   } else if (length(x) == 2) {
@@ -11,8 +17,6 @@ Intersect <- function (x) {
 }
 
 Union <- function (x) {  
-  # Multiple set version of union
-  # x is a list
   if (length(x) == 1) {
     unlist(x)
   } else if (length(x) == 2) {
@@ -23,8 +27,6 @@ Union <- function (x) {
 }
 
 Setdiff <- function (x, y) {
-  # Remove the union of the y's from the common x's. 
-  # x and y are lists of characters.
   xx <- Intersect(x)
   yy <- Union(y)
   setdiff(xx, yy)
@@ -33,8 +35,25 @@ Setdiff <- function (x, y) {
 require(VennDiagram) # XXXXXX
 require(venneuler)   # XXXXXX
 
+############################
+## Venn_diag
+############################
+###
+### filenames = vector de noms dels fitxers "topTable"
+### pathfile = ruta on es troben els filenames i on es deixaran els resultats
+### metPval = nom de la columna utilizada com a criteri de selecció. De normal "Adj.p.val" o "P.value"
+### cond2 = nom identificatiu de la condicio 2 de la comparacio(per escollir columnes de mostres que compleixin aixo)
+### pval = valor que considerem com a criteri per a seleccionar "features"
+### plt =  TRUE / FALSE. si volem que es mostrin els grafics a R directament
+### pltPdf = TRUE / FALSE. Per generar gràfics en pdf
+### eul = TRUE / FALSE. Generar grafic de euler (similar al de Venn pero mida de cercles proporcional a "features")
+### csv= TRUE / FALSE. Genera les llistes amb elements comuns
+###
+### Generar diagrames de Venn i Euler. Amb les corresponents llistes d'elements que es troben a cada regió dels diagrames
+###
+############################
 
-Venn_diag_3 <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul=FALSE,csv=TRUE){
+VennEul_diag <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul=FALSE,csv=TRUE){
   files <- list()
   list_genes_sel <- list()
   for (i in 1:length(filenames)){
@@ -100,5 +119,5 @@ Venn_diag_3 <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul
 }
 
 
-#a <-Venn_diag_3 (c("TopTable.T1.vs.C.csv","TopTable.T2.vs.C.csv","TopTable.T2.vs.T1.csv","TopTable.T.vs.C.csv"),
+#a <-VennEul_diag (c("TopTable.T1.vs.C.csv","TopTable.T2.vs.C.csv","TopTable.T2.vs.T1.csv","TopTable.T.vs.C.csv"),
 #                   "results/", "Adj.p.val", 0.05 ,eul=TRUE)
