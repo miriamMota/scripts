@@ -1,3 +1,8 @@
+############################
+## Miriam Mota Foix
+## 09.09.2015
+############################
+
 # bootstrap wilcox y AUC
 
 require(boot)
