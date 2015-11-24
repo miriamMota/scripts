@@ -3,6 +3,9 @@
 ## 24.11.2015
 ############################
 
+require(VennDiagram)
+require(venneuler)
+
 
 ## Funcions necessaries per extreure la llista d'elements 
 ## tant x com y en tots els casos es una llista de caracters.
