@@ -1,4 +1,7 @@
-
+############################
+## Miriam Mota Foix
+## 23.11.2015
+############################
 
 hm_ord <- function(tTab, colPval="Adj.p.val",pval=0.05,ordC=TRUE,cond1,cond2 ){
   tt_hm <- read.csv(paste("results/",tTab,sep="" ))
