@@ -1,3 +1,9 @@
+############################
+## Miriam Mota Foix
+## 24.11.2015
+############################
+
+
 require(xlsx)
 require(ssize)
 library(gdata) # for nobs()
