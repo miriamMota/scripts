@@ -1,3 +1,8 @@
+############################
+## Miriam Mota Foix
+## 15.12.2014
+############################
+
 # Convertir variables a clase corresponent
 # dat = Base de dades, data.frame
 # nlev = màxim de nivells per a que la variable es consideri factor
