@@ -1,3 +1,8 @@
+############################
+## Miriam Mota Foix
+## 09.09.2015
+############################
+
 # Convertir variables a clase corresponent  i primer mirada dades depurar
 
 reclass <- function(dat,nlev){
