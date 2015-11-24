@@ -34,7 +34,7 @@ require(VennDiagram) # XXXXXX
 require(venneuler)   # XXXXXX
 
 
-Venn_diag_3 <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul=FALSE){
+Venn_diag_3 <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul=FALSE,csv=TRUE){
   files <- list()
   list_genes_sel <- list()
   for (i in 1:length(filenames)){
@@ -46,11 +46,9 @@ Venn_diag_3 <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul
   
   ## Creating Venn Diagram
   compName <- paste0(substr(filenames, start=10, stop=17),"_")
-  venn.plot <- venn.diagram(list(A = list_genes_sel[[1]],
-                                 B = list_genes_sel[[2]],
-                                 C = list_genes_sel[[3]]),
+  venn.plot <- venn.diagram(list_genes_sel,
                             category.names = compName,
-                            fill = rainbow(3),
+                            fill = rainbow(length(compName)),
                             #fill = c("tomato", "orchid4", "turquoise3"),
                             alpha = 0.50,
                             resolution = 600,
@@ -66,10 +64,12 @@ Venn_diag_3 <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul
   if(plt){grid.draw(venn.plot)}
   
   if(eul){
+    set <- NULL
+    for (i in 1: length(compName)){
+      set <- c(set, rep(compName[i],length(list_genes_sel[[i]])))
+    }  
     v <- venneuler(data.frame(elements=c(unlist(list_genes_sel)), 
-                              sets= c(rep(compName[1],length(list_genes_sel[[1]])),
-                                      rep(compName[2],length(list_genes_sel[[2]])),
-                                      rep(compName[3],length(list_genes_sel[[3]])))))
+                              sets= set))
     if(pltPdf){
       pdf(paste0(pathfile,"VennEuler",metPval,pval,".pdf"))
       plot(v)
@@ -78,7 +78,7 @@ Venn_diag_3 <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul
     if(plt){plot(v)}
   }
   
-  xx.1 <- list(list1,list2,list3)
+  xx.1 <- list_genes_sel
   names(xx.1) <- compName
   combs <-  unlist(lapply(1:length(xx.1), 
                           function(j) combn(names(xx.1), j, simplify = FALSE)),
@@ -89,12 +89,16 @@ Venn_diag_3 <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul
   elements <- lapply(combs, function(i) Setdiff(xx.1[i], xx.1[setdiff(names(xx.1), i)]))
   n.elements <- sapply(elements, length)
   list_res <- list(elements= elements, n.elements=n.elements) 
-  return(list_res)
+  
+  if(csv){
+    write.csv(t(data.frame(n.elements)),paste0(pathfile,"VennElements.csv"), row.names=FALSE)
+    for (i in 1:length(elements)){
+      write.csv(data.frame(elements = elements[[i]]), paste0(pathfile,"vennList_",names(elements)[i],".csv"), row.names=FALSE)
+    }
+  }
+    return(list_res)
 }
 
 
-#a <-Venn_diag_3 (c("TopTable.T1.vs.C.csv","TopTable.T2.vs.C.csv","TopTable.T2.vs.T1.csv"),
-#                    "results/", "Adj.p.val", 0.05 ,eul=TRUE)
-
-
-
+#a <-Venn_diag_3 (c("TopTable.T1.vs.C.csv","TopTable.T2.vs.C.csv","TopTable.T2.vs.T1.csv","TopTable.T.vs.C.csv"),
+#                   "results/", "Adj.p.val", 0.05 ,eul=TRUE)
