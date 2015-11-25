@@ -4,8 +4,6 @@
 ############################
 
 require(VennDiagram)
-require(venneuler)
-
 
 ## Funcions necessaries per extreure la llista d'elements 
 ## tant x com y en tots els casos es una llista de caracters.
@@ -35,8 +33,7 @@ Setdiff <- function (x, y) {
   setdiff(xx, yy)
 }
 
-require(VennDiagram) # XXXXXX
-require(venneuler)   # XXXXXX
+
 
 ############################
 ## Venn_diag
@@ -55,8 +52,7 @@ require(venneuler)   # XXXXXX
 ### Generar diagrames de Venn i Euler. Amb les corresponents llistes d'elements que es troben a cada regió dels diagrames
 ###
 ############################
-
-VennEul_diag <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul=FALSE,csv=TRUE){
+Venn_diag_3 <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul=FALSE,csv=TRUE){
   files <- list()
   list_genes_sel <- list()
   for (i in 1:length(filenames)){
@@ -86,6 +82,7 @@ VennEul_diag <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eu
   if(plt){grid.draw(venn.plot)}
   
   if(eul){
+    require(venneuler)
     set <- NULL
     for (i in 1: length(compName)){
       set <- c(set, rep(compName[i],length(list_genes_sel[[i]])))
@@ -112,14 +109,18 @@ VennEul_diag <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eu
   n.elements <- sapply(elements, length)
   list_res <- list(elements= elements, n.elements=n.elements) 
   
-  if(csv){
-    write.csv(t(data.frame(n.elements)),paste0(pathfile,"VennElements.csv"), row.names=FALSE)
-    for (i in 1:length(elements)){
-      write.csv(data.frame(elements = elements[[i]]), paste0(pathfile,"vennList_",names(elements)[i],".csv"), row.names=FALSE)
-    }
+  
+  seq.max <- seq_len(max(n.elements))
+  mat <- sapply(elements, "[", i = seq.max)
+  mat[is.na(mat)] <- ""
+  vennElements <- rbind(t(data.frame(n.elements)),data.frame(mat))
+  
+  if(csv) {
+    write.csv(vennElements,file="results/VennElements.csv")
   }
-    return(list_res)
+  return(vennElements)
 }
+
 
 
 #a <-VennEul_diag (c("TopTable.T1.vs.C.csv","TopTable.T2.vs.C.csv","TopTable.T2.vs.T1.csv","TopTable.T.vs.C.csv"),
