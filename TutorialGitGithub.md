@@ -31,7 +31,7 @@ sudo apt-get install git
 * Creem copia local del repositori
 	* OPCIO A (quan encara no hem inclos res) 
 	```
-	mkdir /nomRepo
+	mkdir nomRepo
 	cd nomRepo
 	git init 
 	git remote add origin https://github.com/UsuariGithub/nomRepo.git
