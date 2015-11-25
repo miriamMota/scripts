@@ -116,7 +116,7 @@ Venn_diag_3 <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul
   vennElements <- rbind(t(data.frame(n.elements)),data.frame(mat))
   
   if(csv) {
-    write.csv(vennElements,file="results/VennElements.csv")
+    write.csv(vennElements,file="results/VennElements.csv",row.names=FALSE)
   }
   return(vennElements)
 }
