@@ -24,8 +24,8 @@ sudo apt-get install git
 <br>
 
 #. Combinem Git - Github
-1. Creem repositori des de el ordinador:
-```  ```
+1. Creem repositori des de el ordinador: XXXXXXXXXXXXXXX
+
 
 2. Creem repositori a Github
 * Creem copia local del repositori
