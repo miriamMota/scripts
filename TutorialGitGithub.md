@@ -25,7 +25,7 @@ sudo apt-get install git
 
 #. Combinem Git - Github
 1. Creem repositori des de el ordinador:
-```git remote add origin https://github.com/UsuariGithub/try_git.git```
+```  ```
 
 2. Creem repositori a Github
 * Creem copia local del repositori
@@ -91,6 +91,7 @@ sudo apt-get install git
 	* ```git config --global color.ui true ```
 	* Que ha canviat des de l'ultim commit``` git status```
 	* ```git log```
+	* [Repositoris remots](https://git-scm.com/book/es/v1/Fundamentos-de-Git-Trabajando-con-repositorios-remotos)
 
 
 <br>
@@ -100,6 +101,7 @@ sudo apt-get install git
 <br>
 
 Altre documentacio: 
+[GitHub escritorio](https://desktop.github.com/)
 
 [Preus RepositorisPrivats-Espai](https://github.com/pricing)
 
