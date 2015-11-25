@@ -52,6 +52,7 @@ Setdiff <- function (x, y) {
 ### Generar diagrames de Venn i Euler. Amb les corresponents llistes d'elements que es troben a cada regió dels diagrames
 ###
 ############################
+
 Venn_diag_3 <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul=FALSE,csv=TRUE){
   files <- list()
   list_genes_sel <- list()
@@ -82,7 +83,6 @@ Venn_diag_3 <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul
   if(plt){grid.draw(venn.plot)}
   
   if(eul){
-    require(venneuler)
     set <- NULL
     for (i in 1: length(compName)){
       set <- c(set, rep(compName[i],length(list_genes_sel[[i]])))
@@ -97,15 +97,14 @@ Venn_diag_3 <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul
     if(plt){plot(v)}
   }
   
-  xx.1 <- list_genes_sel
-  names(xx.1) <- compName
-  combs <-  unlist(lapply(1:length(xx.1), 
-                          function(j) combn(names(xx.1), j, simplify = FALSE)),
+  names(list_genes_sel) <- compName
+  combs <-  unlist(lapply(1:length(list_genes_sel), 
+                          function(j) combn(names(list_genes_sel), j, simplify = FALSE)),
                    recursive = FALSE)
   names(combs) <- sapply(combs, function(i) paste0(i, collapse = ""))
   #str(combs)
   
-  elements <- lapply(combs, function(i) Setdiff(xx.1[i], xx.1[setdiff(names(xx.1), i)]))
+  elements <- lapply(combs, function(i) Setdiff(list_genes_sel[i], list_genes_sel[setdiff(names(list_genes_sel), i)]))
   n.elements <- sapply(elements, length)
   list_res <- list(elements= elements, n.elements=n.elements) 
   
@@ -120,6 +119,7 @@ Venn_diag_3 <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul
   }
   return(vennElements)
 }
+
 
 
 
