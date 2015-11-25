@@ -101,7 +101,7 @@ sudo apt-get install git
 <br>
 
 Altre documentacio: 
-(https://guides.github.com/introduction/getting-your-project-on-github/)
+[altres](https://guides.github.com/introduction/getting-your-project-on-github/)
 
 
 [GitHub escritorio](https://desktop.github.com/)
