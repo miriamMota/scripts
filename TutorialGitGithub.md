@@ -101,6 +101,9 @@ sudo apt-get install git
 <br>
 
 Altre documentacio: 
+(https://guides.github.com/introduction/getting-your-project-on-github/)
+
+
 [GitHub escritorio](https://desktop.github.com/)
 
 [Preus RepositorisPrivats-Espai](https://github.com/pricing)
