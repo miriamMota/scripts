@@ -39,8 +39,8 @@ Setdiff <- function (x, y) {
 ## Venn_diag
 ############################
 ###
-### filenames = vector de noms dels fitxers "topTable"
-### pathfile = ruta on es troben els filenames i on es deixaran els resultats
+### filenames = vector de nombres de los ficheros .csv ("topTable")
+### pathfile = ruta donde se encuentran los ficheros y donde se dejaran los resultados.
 ### metPval = nom de la columna utilizada com a criteri de selecció. De normal "Adj.p.val" o "P.value"
 ### cond2 = nom identificatiu de la condicio 2 de la comparacio(per escollir columnes de mostres que compleixin aixo)
 ### pval = valor que considerem com a criteri per a seleccionar "features"
@@ -121,7 +121,8 @@ Venn_diag_3 <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul
 }
 
 
-
-
-#a <-VennEul_diag (c("TopTable.T1.vs.C.csv","TopTable.T2.vs.C.csv","TopTable.T2.vs.T1.csv","TopTable.T.vs.C.csv"),
-#                   "results/", "Adj.p.val", 0.05 ,eul=TRUE)
+#a <-VennEul_diag (filenames = c("TopTable.T1.vs.C.csv","TopTable.T2.vs.C.csv","TopTable.T2.vs.T1.csv","TopTable.T.vs.C.csv"),
+#                  pathfile = "results/",
+#                  metPval = "Adj.p.val",
+#                  pval = 0.05 ,
+#                  eul=TRUE)
