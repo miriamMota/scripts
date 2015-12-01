@@ -15,7 +15,7 @@ reclass(dat, nlev)
 Convierte variables a clase correspondiente (para data.frame)
 }
 \examples{
-reclass(data(mtcars))
+reclass()
 }
 \keyword{reclass}
 

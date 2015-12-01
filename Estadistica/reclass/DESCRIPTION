@@ -1,8 +1,8 @@
 Package: reclass
-Title: What the Package Does (one line, title case)
+Title: asigna clase adecuada a data.frame
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: person("Miriam", "Mota", email = "mmota.foix@gmail.com", role = c("aut", "cre"))
+Description: asigna clase adecuada a data.frame
 Depends:
     R (>= 3.2.2)
 License: What license is it under?

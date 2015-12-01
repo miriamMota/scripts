@@ -6,7 +6,7 @@
 #' @keywords reclass
 #' @export
 #' @examples
-#' reclass(data(mtcars))
+#' reclass()
 
 ############################
 ## Miriam Mota Foix

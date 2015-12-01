@@ -26,7 +26,7 @@ document()
 
 # per instalar 
 setwd("..")
-install("cats2")
+install("reclass")
 
 
-install_github('cats2', 'github_username')
+install_github("reclass", 'miriamMota/scripts/Estadistica')
