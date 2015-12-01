@@ -25,8 +25,8 @@ setwd("./reclass")
 document()
 
 # per instalar 
-setwd("..")
+setwd("/home/miriam/scripts/Estadistica/")
 install("reclass")
 
 
-install_github("reclass", 'miriamMota/scripts/Estadistica')
+install_github('miriamMota/scripts/Estadistica/reclass')
