@@ -4,3 +4,6 @@ installifnot <- function(pkg)
     install.packages(pkg, dep = TRUE)
   require(pkg, character.only = TRUE)
 }
+
+# Example
+# installifnot("readxl")
