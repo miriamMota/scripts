@@ -25,7 +25,6 @@
 ############################
 
 tabOR_lr <- function(mod, xtab=FALSE,title="title"){
-  require(xtable)
   ORcoef <- exp(mod$coeff) ## OR 
   infORcoef <- exp(confint(mod))[,1] ## IC dels OR 
   supORcoef <- exp(confint(mod))[,2]
