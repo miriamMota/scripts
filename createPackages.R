@@ -21,12 +21,13 @@ create("multGGplot")
 #' cat_function()
 
 # procesar documento 
-setwd("./installifnot")
+setwd("./multGGplot")
 document()
 
 # per instalar 
-setwd("/home/miriam/scripts/")
-install("installifnot")
+setwd("/home/miriam/scripts/Estadistica")
+install("multGGplot")
 
 
-install_github('miriamMota/scripts/installifnot')
+install_github('miriamMota/scripts/Estadistica/multGGplot')
+?

@@ -7,8 +7,6 @@
 #' @examples
 #' multGGplot(plot1,plot2,plot3,plot4, cols=2)
 
-#Per fer un par (mfrow=c(2,2)) amb ggplot
-
 multGGplot <- function(..., plotlist = NULL, file, cols = 1, layout = NULL) {
   install_github('miriamMota/scripts/installifnot')
   installifnot(grid)
