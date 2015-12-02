@@ -10,7 +10,7 @@ installifnot(pkg)
 \item{pkg}{Nombre del paquete en formato caracter}
 }
 \description{
-Comprueba si un paquete esta instalado y lo instala y carga
+Comprueba si un paquete esta instalado y si no lo instala y carga.
 }
 \examples{
 installifnot("readxl")

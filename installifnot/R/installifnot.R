@@ -1,6 +1,6 @@
 #' installifnot Function
 #'
-#' Comprueba si un paquete esta instalado y lo instala y carga
+#' Comprueba si un paquete esta instalado y si no lo instala y carga.
 #' @param pkg Nombre del paquete en formato caracter
 #' @keywords install
 #' @export
