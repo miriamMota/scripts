@@ -1,6 +1,6 @@
 #Per fer un par (mfrow=c(2,2)) amb ggplot
 
-multiplot <- function(..., plotlist = NULL, file, cols = 1, layout = NULL) {
+multGGplot <- function(..., plotlist = NULL, file, cols = 1, layout = NULL) {
   require(grid)
   
   plots <- c(list(...), plotlist)
