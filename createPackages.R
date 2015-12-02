@@ -34,3 +34,4 @@ setwd(pkgDir)
 
 install_github('miriamMota/scripts/Estadistica/multGGplot') # desde github
 require(multGGplot)
+?multGGplot

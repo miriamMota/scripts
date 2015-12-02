@@ -1,9 +1,9 @@
 #' A multGGplot Function
 #'
 #' Similar a par(mfrow=c(row,col)) para "ggplot" (Obtenida de cookbook for R )
-#' @param layout A matrix specifying the layout. If present, 'cols' is ignored.
-#' @param cols Number of columns in layout
 #' @param plotslist plots separados por coma
+#' @param cols Number of columns in layout
+#' @param layout A matrix specifying the layout. If present, 'cols' is ignored.
 #' @keywords multiGGplot
 #' @export
 #' @examples
