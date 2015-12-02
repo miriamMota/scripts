@@ -2,6 +2,7 @@
 #'
 #' Similar a par(mfrow=c(row,col)) para "ggplot"
 #' @param plots separados por coma
+#' @param cols número de columnas
 #' @keywords multiGGplot
 #' @export
 #' @examples

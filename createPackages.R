@@ -3,7 +3,8 @@
 source("https://raw.githubusercontent.com/miriamMota/scripts/master/installifnot.R")
 installifnot("devtools")
 installifnot("roxygen2")
-setwd("/home/miriam/scripts/Estadistica/")
+pkgDir <- "/home/miriam/scripts/Estadistica/"
+setwd(pkgDir)
 create("multGGplot")
 
 
@@ -25,9 +26,8 @@ setwd("./multGGplot")
 document()
 
 # per instalar 
-setwd("/home/miriam/scripts/Estadistica")
+setwd(pkgDir)
 install("multGGplot")
 
 
 install_github('miriamMota/scripts/Estadistica/multGGplot')
-?

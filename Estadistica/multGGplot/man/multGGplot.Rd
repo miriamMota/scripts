@@ -7,6 +7,8 @@
 multGGplot(..., plotlist = NULL, file, cols = 1, layout = NULL)
 }
 \arguments{
+\item{cols}{número de columnas}
+
 \item{plots}{separados por coma}
 }
 \description{
