@@ -5,9 +5,9 @@ require("devtools")
 install_github('miriamMota/scripts/installifnot')
 require(installifnot)
 installifnot("roxygen2")
-pkgDir <- "/home/miriam/scripts/Estadistica/"
+pkgDir <- "/home/miriam/scripts/"
 setwd(pkgDir)
-create("tabORrl")
+create("mmotaFoix")
 
 
 # agregar funciones a carpeta "R" 
