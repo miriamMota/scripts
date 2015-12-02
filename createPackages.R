@@ -3,8 +3,8 @@
 source("https://raw.githubusercontent.com/miriamMota/scripts/master/installifnot.R")
 installifnot("devtools")
 installifnot("roxygen2")
-setwd("/home/miriam/scripts/Estadistica/")
-create("cats2")
+setwd("/home/miriam/scripts/")
+create("installifnot")
 
 
 # agregar funciones a carpeta "R" 
@@ -21,12 +21,12 @@ create("cats2")
 #' cat_function()
 
 # procesar documento 
-setwd("./reclass")
+setwd("./installifnot")
 document()
 
 # per instalar 
-setwd("/home/miriam/scripts/Estadistica/")
-install("reclass")
+setwd("/home/miriam/scripts/")
+install("installifnot")
 
 
-install_github('miriamMota/scripts/Estadistica/reclass')
+install_github('miriamMota/scripts/installifnot')
