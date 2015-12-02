@@ -1,7 +1,9 @@
 # http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/
 
-source("https://raw.githubusercontent.com/miriamMota/scripts/master/installifnot.R")
-installifnot("devtools")
+
+require("devtools")
+install_github('miriamMota/scripts/installifnot')
+require(installifnot)
 installifnot("roxygen2")
 pkgDir <- "/home/miriam/scripts/Estadistica/"
 setwd(pkgDir)
@@ -27,7 +29,8 @@ document()
 
 # per instalar 
 setwd(pkgDir)
-install("multGGplot")
+# install("multGGplot")  # desde local
 
 
-install_github('miriamMota/scripts/Estadistica/multGGplot')
+install_github('miriamMota/scripts/Estadistica/multGGplot') # desde github
+require(multGGplot)
