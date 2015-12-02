@@ -2,7 +2,7 @@ Package: multGGplot
 Title: multiplot para ggplot
 Version: 0.0.0.9000
 Authors@R: person("Miriam", "Mota", email = "mmota.foix@gmail.com", role = c("aut", "cre"))
-Description: Similar a par(mfrow=c(row,col)) para "ggplot"
+Description: multiplot para ggplot
 Depends:
     R (>= 3.2.2)
 License: What license is it under?
