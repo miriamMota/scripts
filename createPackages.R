@@ -1,5 +1,5 @@
 # http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/
-
+# http://r-pkgs.had.co.nz/git.html
 
 require("devtools")
 install_github('miriamMota/scripts/installifnot')
@@ -7,7 +7,7 @@ require(installifnot)
 installifnot("roxygen2")
 pkgDir <- "/home/miriam/scripts/Estadistica/"
 setwd(pkgDir)
-create("multGGplot")
+create("tabORrl")
 
 
 # agregar funciones a carpeta "R" 
@@ -24,14 +24,14 @@ create("multGGplot")
 #' cat_function()
 
 # procesar documento 
-setwd("./multGGplot")
+setwd("./tabORrl")
 document()
 
 # per instalar 
 setwd(pkgDir)
-# install("multGGplot")  # desde local
+# install("tabORrl")  # desde local
 
 
-install_github('miriamMota/scripts/Estadistica/multGGplot') # desde github
-require(multGGplot)
-?multGGplot
+install_github('miriamMota/scripts/Estadistica/tabORrl') # desde github
+require(tabORrl)
+?tabORrl
