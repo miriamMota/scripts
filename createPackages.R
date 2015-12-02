@@ -5,9 +5,9 @@ require("devtools")
 install_github('miriamMota/scripts/installifnot')
 require(installifnot)
 installifnot("roxygen2")
-pkgDir <- "/home/miriam/scripts/"
+pkgDir <- "/home/miriam/"
 setwd(pkgDir)
-create("mmotaFoix")
+create("mmotaF")
 
 
 # agregar funciones a carpeta "R" 
@@ -24,7 +24,7 @@ create("mmotaFoix")
 #' cat_function()
 
 # procesar documento 
-setwd("./tabORrl")
+setwd("./mmotaF")
 document()
 
 # per instalar 
@@ -32,6 +32,6 @@ setwd(pkgDir)
 # install("tabORrl")  # desde local
 
 
-install_github('miriamMota/scripts/Estadistica/tabORrl') # desde github
+install_github('miriamMota/scripts/mmotaFoix') # desde github
 require(tabORrl)
 ?tabORrl
