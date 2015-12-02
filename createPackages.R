@@ -3,8 +3,8 @@
 source("https://raw.githubusercontent.com/miriamMota/scripts/master/installifnot.R")
 installifnot("devtools")
 installifnot("roxygen2")
-setwd("/home/miriam/scripts/")
-create("installifnot")
+setwd("/home/miriam/scripts/Estadistica/")
+create("multGGplot")
 
 
 # agregar funciones a carpeta "R" 
