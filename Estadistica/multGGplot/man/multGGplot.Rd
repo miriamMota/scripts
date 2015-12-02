@@ -7,12 +7,14 @@
 multGGplot(..., plotlist = NULL, file, cols = 1, layout = NULL)
 }
 \arguments{
-\item{cols}{número de columnas}
+\item{cols}{Number of columns in layout}
 
-\item{plots}{separados por coma}
+\item{layout}{A matrix specifying the layout. If present, 'cols' is ignored.}
+
+\item{plotslist}{plots separados por coma}
 }
 \description{
-Similar a par(mfrow=c(row,col)) para "ggplot"
+Similar a par(mfrow=c(row,col)) para "ggplot" (Obtenida de cookbook for R )
 }
 \examples{
 multGGplot(plot1,plot2,plot3,plot4, cols=2)
