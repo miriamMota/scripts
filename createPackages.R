@@ -27,6 +27,7 @@ create("mmotaF")
 setwd("./mmotaF")
 document()
 
+check()
 # per instalar 
 setwd(pkgDir)
 # install("tabORrl")  # desde local
