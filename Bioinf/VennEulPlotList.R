@@ -53,7 +53,7 @@ Setdiff <- function (x, y) {
 ###
 ############################
 
-Venn_diag_3 <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul=FALSE,csv=TRUE){
+VennEul_diag <- function(filenames,pathfile,metPval,pval,plt=TRUE,pltPdf=TRUE,eul=FALSE,csv=TRUE){
   files <- list()
   list_genes_sel <- list()
   for (i in 1:length(filenames)){
