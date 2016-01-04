@@ -2,9 +2,7 @@
 # http://r-pkgs.had.co.nz/git.html
 
 require("devtools")
-install_github('miriamMota/scripts/installifnot')
-require(installifnot)
-installifnot("roxygen2")
+require("roxygen2")
 pkgDir <- "/home/miriam/"
 setwd(pkgDir)
 create("mmotaF")
