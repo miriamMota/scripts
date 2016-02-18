@@ -14,7 +14,7 @@ sudo apt-get install git
 ```
   * Comprovem dades
 ```
- git config –list
+ git config --list
 ```
 <br>
 
