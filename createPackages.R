@@ -37,3 +37,5 @@ setwd(pkgDir)
 install_github('miriamMota/scripts/mmotaFoix') # desde github
 require(tabORrl)
 ?tabORrl
+
+# http://r-pkgs.had.co.nz/description.html
