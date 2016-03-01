@@ -17,9 +17,12 @@ create("mmotaF")
 #' This function allows you to express your love of cats.
 #' @param love Do you love cats? Defaults to TRUE.
 #' @keywords cats
-#' @export
+#' @export cat_function
+#' @import xtable 
 #' @examples
 #' cat_function()
+
+### Afegir import a DESCRIPTION Imports: xtable, Hmisc
 
 # procesar documento 
 setwd("./mmotaF")
