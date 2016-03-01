@@ -39,3 +39,4 @@ require(tabORrl)
 ?tabORrl
 
 # http://r-pkgs.had.co.nz/description.html
+# http://roxygen.org/roxygen2-manual.pdf
