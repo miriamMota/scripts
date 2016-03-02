@@ -2,6 +2,7 @@ installBiocifnot <- function(pckgName){
   if (!(require(pckgName, character.only = TRUE))) {
     source("http://Bioconductor.org/biocLite.R")
     biocLite(pckgName)
+    require(pckgName)
   }
 }
 # Example 
@@ -10,6 +11,7 @@ installBiocifnot <- function(pckgName){
 installifnot <- function(pckgName){
   if (!(require(pckgName, character.only = TRUE))) {
     install.packages(pckgName, dep = TRUE)
+    require(pckgName)
   }
 }
 # Example 
@@ -19,6 +21,7 @@ installGitifnot <- function(pathGit, pckgName){
   if (!(require(pckgName, character.only = TRUE))) {
     installifnot("devtools")
     install_github(file.path(pathGit,pckgName))
+    require(pckgName)
   }
 }
 # Example 
