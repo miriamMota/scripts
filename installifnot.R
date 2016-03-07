@@ -17,11 +17,14 @@ installifnot <- function(pckgName){
 # Example 
 # installifnot("xlsx")
 
-installGitifnot <- function(pathGit, pckgName){
+installGitifnot <- function(pathGit, pckgName, proxy = FALSE, urlproxy = "conf_www.ir.vhebron.net", portproxy = 8081){
   if (!(require(pckgName, character.only = TRUE))) {
     installifnot("devtools")
+    # require(curl)
+    if(proxy) set_config(use_proxy(url=urlproxy, port=portproxy)) 
     install_github(file.path(pathGit,pckgName))
     require(pckgName)
+    
   }
 }
 # Example 
