@@ -23,7 +23,7 @@ installGitifnot <- function(pathPackage, proxy = FALSE, urlproxy = "conf_www.ir.
     # require(curl)
     if(proxy) set_config(use_proxy(url=urlproxy, port=portproxy)) 
     install_github(pathPackage)
-    require(pckgName)
+    require(pathPackage)
     
   }
 }
