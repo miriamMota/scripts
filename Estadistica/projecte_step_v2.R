@@ -21,10 +21,12 @@ VR1 <- "antecedente_de_sifilis"
 stepLR <- function(VR, varExpl, data, var2mod = NA, trace = T  ){
   for (i in 1:length(varExpl)) {
     if (sum(is.na(var2mod)) >= 1) {
-      mod <- glm(as.formula( paste(VR, "~", "1")), data =  na.omit(data), family = binomial)
+      frml <- as.formula( paste(VR, "~", "1"))
+      mod <- glm(frml , data =  na.omit(data), family = binomial)
     }else{  
-      mod <- glm(as.formula( paste(VR, "~", paste(var2mod,collapse = "+" ) )), data =  na.omit(data), family = binomial)
-      if (trace) print(round(tabOR_lr(mod,xtab = F),3))
+      frml <- as.formula( paste(VR, "~", paste(var2mod,collapse = "+" )))
+      mod <- glm(frml , data =  na.omit(data), family = binomial)
+      if (trace) cat(as.character(frml),"\n");print(round(tabOR_lr(mod,xtab = F),3))
     }
     
     modvar <- lapply(varExpl[!grepl(paste0(var2mod,collapse = "|"),varExpl)],
@@ -47,7 +49,7 @@ stepLR <- function(VR, varExpl, data, var2mod = NA, trace = T  ){
   df$p_value <- as.numeric(df$p_value)
   df_sel <- df[df$p_value < 0.1,]
   #cat("Paso 1")
-  if(trace) print(round(df_sel,3))
+  if (trace) print(round(df_sel,3))
   varSelStep <- rownames(df)[(df$AIC == min(df$AIC,na.rm = T)) & (df$p_value < 0.1) ]
   var2mod <- c(var2mod, varSelStep )
   var2mod <- na.omit(var2mod)
@@ -55,7 +57,7 @@ stepLR <- function(VR, varExpl, data, var2mod = NA, trace = T  ){
     return(glm(as.formula( paste(VR, "~", paste(var2mod,collapse = "+" ) )), data =  na.omit(data), family = binomial))
     break 
   }
-  if (trace) cat( "Variable candidata a entrar", varSelStep)
+  if (trace) cat( "Variable candidata a entrar", varSelStep,"\n")
   }
 }
 
