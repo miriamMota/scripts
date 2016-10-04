@@ -1,20 +1,7 @@
-load("dades/ana_enc_1v.Rdata")
-## necessari
-percNA <- apply(dat_all[,nameVarSel],2, function(x)(sum(is.na(x))/length(x))*100)
-namesPercNA <- names(percNA)[percNA > 10]
-
-for (i in 1:length(namesPercNA))
-{
-  dat_all[,namesPercNA[i]] <- as.character(dat_all[,namesPercNA[i]])
-  dat_all[is.na(dat_all[,namesPercNA[i]]) , namesPercNA[i]]  <- "NSNC"
-  dat_all[,namesPercNA[i]] <- as.factor(dat_all[,namesPercNA[i]])
-}
-data1 <- dat <- dat_all[,c("antecedente_de_sifilis",nameVarSel)]
-
-varExpl1 <- nameVarSel#[!grepl("vhc|a_contacto", nameVarSel) ]
-VR1 <- "antecedente_de_sifilis"
-
-
+############################
+## Miriam Mota Foix
+## 2016.10.04
+############################
 
 
 ## projecte de funcio
@@ -75,15 +62,10 @@ stepLR <- function(VR, varExpl, data, var2mod = NA, trace = TRUE  ){
 }
 
 
-modfin <- stepLR(VR1,varExpl1, data1, trace = F)
-summary(modfin[[1]])
-round(tabOR_lr(modfin[[1]]),3)
-
-summary(modfin[[2]])
-round(tabOR_lr(modfin[[2]]),3)
 
 data("mtcars")
 mtcars$vs <- as.factor(mtcars$vs)
 mtcars$am <- as.factor(mtcars$am)
 modfin <- stepLR(VR = "vs",varExpl = c("hp", "am", "carb"), data = mtcars, trace = T )
-
+summary(modfin[[1]])
+summary(modfin[[2]])
