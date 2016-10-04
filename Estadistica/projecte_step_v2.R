@@ -1,5 +1,3 @@
-
-
 load("dades/ana_enc_1v.Rdata")
 ## necessari
 percNA <- apply(dat_all[,nameVarSel],2, function(x)(sum(is.na(x))/length(x))*100)
@@ -11,10 +9,10 @@ for (i in 1:length(namesPercNA))
   dat_all[is.na(dat_all[,namesPercNA[i]]) , namesPercNA[i]]  <- "NSNC"
   dat_all[,namesPercNA[i]] <- as.factor(dat_all[,namesPercNA[i]])
 }
-data1 <- dat <- dat_all[,c("antecedente_de_sifilis",nameVarSel)]
+data <- dat <- dat_all[,c("antecedente_de_sifilis",nameVarSel)]
 
-varExpl1 <- nameVarSel#[!grepl("vhc|a_contacto", nameVarSel) ]
-VR1 <- "antecedente_de_sifilis"
+varExpl <- nameVarSel#[!grepl("vhc|a_contacto", nameVarSel) ]
+VR <- "antecedente_de_sifilis"
 
 
 
@@ -22,7 +20,7 @@ VR1 <- "antecedente_de_sifilis"
 ## projecte de funcio
 stepLR <- function(VR, varExpl, data, var2mod = NA ){
   for (i in 1:length(varExpl)) {
-    if(sum(is.na(var2mod))>=1) {
+    if (sum(is.na(var2mod)) >= 1) {
       mod <- glm(as.formula( paste(VR, "~", "1")), data =  na.omit(data), family = binomial)
     }else{  
       mod <- glm(as.formula( paste(VR, "~", paste(var2mod,collapse = "+" ) )), data =  na.omit(data), family = binomial)
@@ -31,7 +29,7 @@ stepLR <- function(VR, varExpl, data, var2mod = NA ){
     
     modvar <- lapply(varExpl[!grepl(paste0(var2mod,collapse = "|"),varExpl)],
                      function(var) {
-                       if(sum(is.na(var2mod))>=1) {
+                       if (sum(is.na(var2mod)) >= 1) {
                          formula    <- as.formula(paste( VR, " ~ ", var))
                        }else{  
                          formula    <- as.formula(paste( VR, " ~ ",paste(var2mod,collapse = "+"),"+", var ))
@@ -50,7 +48,7 @@ stepLR <- function(VR, varExpl, data, var2mod = NA ){
   df_sel <- df[df$p_value < 0.1,]
   #cat("Paso 1")
   print(round(df_sel,3))
-  varSelStep <- rownames(df)[(df$AIC == min(df$AIC)) & (df$p_value < 0.1) ]
+  varSelStep <- rownames(df)[(df$AIC == min(df$AIC,na.rm = T)) & (df$p_value < 0.1) ]
   var2mod <- c(var2mod, varSelStep )
   var2mod <- na.omit(var2mod)
   if (length(varSelStep) == 0) {
