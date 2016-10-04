@@ -54,7 +54,10 @@ stepLR <- function(VR, varExpl, data, var2mod = NA, trace = T  ){
   var2mod <- c(var2mod, varSelStep )
   var2mod <- na.omit(var2mod)
   if (length(varSelStep) == 0) {
-    return(glm(as.formula( paste(VR, "~", paste(var2mod,collapse = "+" ) )), data =  na.omit(data), family = binomial))
+    modfin <- list()
+    modfin[[1]] <- glm(as.formula( paste(VR, "~", paste(var2mod,collapse = "+" ) )), data =  na.omit(data), family = binomial)
+    modfin[[2]] <- glm(as.formula( paste(VR, "~", paste(var2mod,collapse = "+" ) )), data =  na.omit(data[,c(VR,var2mod)]), family = binomial)
+    return(modfin)
     break 
   }
   if (trace) cat( "Variable candidata a entrar", varSelStep,"\n")
@@ -63,5 +66,8 @@ stepLR <- function(VR, varExpl, data, var2mod = NA, trace = T  ){
 
 
 modfin <- stepLR(VR1,varExpl1, data1)
-summary(modfin)
-tabOR_lr(modfin)
+summary(modfin[[1]])
+tabOR_lr(modfin[[1]])
+
+summary(modfin[[2]])
+tabOR_lr(modfin[[2]])
