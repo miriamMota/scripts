@@ -18,7 +18,8 @@ new_var_cat <- function(dat, var_con, df_lev){
   pos_lev <- list()
   for (i in 1:length(var_con)) {
     for (j in 1:length(df_lev[,1])) {
-      pos_lev[[as.character(df_lev[,1][j])]] <- c(pos_lev[[as.character(df_lev[,1][j])]], grep(df_lev[,1][j],dat[,var_con[i]]))
+      name_poslev <- as.character(df_lev[,1][j])
+      pos_lev[[name_poslev]] <- c(pos_lev[[name_poslev]], grep(df_lev[,1][j],dat[,var_con[i]]))
     }
   }
   
@@ -47,7 +48,8 @@ var_con1 <- c("aa","bb","cc")
 df_lev1 <- data.frame(levels(dat[,var_con[2]]),c("No","Si","Si") )
 name_new_var1 <- "nova_variable1"
 
-new_var_cat(dat = dat1, var_con = var_con1, df_lev = df_lev1, name_new_var = name_new_var1)
+dat1$new <- new_var_cat(dat = dat1, var_con = var_con1, df_lev = df_lev1)
+dat1
 #View(data.frame(dat$new_var,dat$nova_variable1))
 
 
