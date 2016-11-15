@@ -1,4 +1,10 @@
-ggplot_distr <- function(var1,var2, dat){
+
+############################
+## Miriam Mota Foix
+## 2016.11.15
+############################
+
+ggplot_distr <- function(var1,var2, dat) {
   dat_temp <- dat
   dat_temp <- na.omit(dat_temp[,c(var1,var2)])
   
@@ -17,4 +23,5 @@ ggplot_distr <- function(var1,var2, dat){
     theme(axis.text.x = element_text(angle = 90, vjust = 0.5,hjust = 0.5, size = 6)) +
     theme(legend.position = "bottom")
   # theme(axis.text.x=element_blank())
+}
   
