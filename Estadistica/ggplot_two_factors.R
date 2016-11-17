@@ -8,7 +8,8 @@ ggplot_distr <- function(var1,var2, dat) {
   dat_temp <- dat
   dat_temp <- na.omit(dat_temp[,c(var1,var2)])
   
-  test.pct = dat_temp %>% group_by(dat_temp[,var2], dat_temp[,var1]) %>%  summarise(count = n()) %>%  mutate(pct = count/sum(count)) 
+  test.pct = dat_temp %>% group_by(dat_temp[,var2], dat_temp[,var1])  %>%  summarise(count = n()) 
+  test.pct$pct <- test.pct$count/sum(test.pct$count)
   colnames(test.pct) <- c("var2","var1","count","pct")
   ggplot(test.pct, aes(x = var1, y = pct,# colour = var1, 
                        fill = var1)) + 
