@@ -2,7 +2,7 @@ installBiocifnot <- function(pckgName){
   if (!(require(pckgName, character.only = TRUE))) {
     source("http://Bioconductor.org/biocLite.R")
     biocLite(pckgName)
-    require(pckgName)
+    require(pckgName, character.only = TRUE)
   }
 }
 # Example 
@@ -11,7 +11,7 @@ installBiocifnot <- function(pckgName){
 installifnot <- function(pckgName){
   if (!(require(pckgName, character.only = TRUE))) {
     install.packages(pckgName, dep = TRUE)
-    require(pckgName)
+    require(pckgName, character.only = TRUE)
   }
 }
 # Example 
