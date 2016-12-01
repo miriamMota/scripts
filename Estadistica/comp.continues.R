@@ -89,51 +89,14 @@ comp.continues <- function(var.cont, varClin, dat, nround = 3, correlation = FAL
   
 }
 
-## exemple
+
 bm <- c("proADM24hnmoll", "proADM48hnmoll", "proADM72hnmoll", "PCT24hµgl", "PCT48hµgl", "PCT72hµgl", "CPP24hpmoll", "CPP48Hpmoll", "CPP72hpmoll")
 varClin <- c("Sepsis", "Septic_shock","Alive_Hospital","MV_days","ICU_days", "Hospital_days" )
-comp.continues(bm,varClin, nround = 3, correlation = FALSE, corr.meth = "Spearman")
 
-# Per latex
-print(xtable(res$p.val_xtable, 
-             caption = paste("Comparación biomarcadores vs variables clínicas. \\\\ {\\footnotesize",res[["legend"]]), "}"), 
-      size = "small", sanitize.text.function = function(x) x)
+res <- comp.continues(bm,varClin,dat = dat, nround = 3, correlation = FALSE, corr.meth = "Spearman")
 
-print(xtable(res$p.val_adj_xtable, 
-             caption = paste("Comparación biomarcadores vs variables clínicas. \\\\ {\\footnotesize",res[["legend_adjust"]]), "}"), 
-      size = "small", sanitize.text.function = function(x) x)
+# print(xtable(df.res.xtab[,1:3]), size = "small", sanitize.text.function = function(x) x)
+print(xtable(res$p.val_xtable, caption = paste("Comparación biomarcadores vs variables clínicas. \\\\ {\\footnotesize",res[["legend"]]), "}"), size = "small", sanitize.text.function = function(x) x)
 
-
-## Análisi gràfic de les taules anteriors 
-## encara s'ha de perfeccionar
-pvalsign <- which(res$p.val < 0.05, arr.ind = T)
-rwn2plot <- rownames(res$p.val)[pvalsign[,1]]
-## 
-cnm_tab_res <- NULL
-for (i in 1:length(colnames(res$p.val)[pvalsign[,2]]))    cnm_tab_res[i] <- unlist(strsplit(colnames(res$p.val)[pvalsign[,2]][i], " "))[1]
-name_var_res <- NULL
-for (i in 1:length(varClin[pvalsign[,2]]))    name_var_res[i] <- unlist(strsplit(varClin[pvalsign[,2]][i], "_"))[1]
-
-if ( all.equal(cnm_tab_res, name_var_res)) cn2plot <- varClin[pvalsign[,2]]
-df2plot <- data.frame(rwn2plot, cn2plot)
-
-par(mfrow = c(3, 2))
-for (i in 1:dim(df.comp)[1]) {
-  if (class(dat[,cn2plot[i]]) == "factor" ) {
-    
-    boxplot(dat[,rwn2plot[i]]~ dat[,cn2plot[i]],
-            xlab = cn2plot[i], ylab = rwn2plot[i] ,
-            main = paste("U Mann Witney.\n",
-                         "P.val:",round(res$p.val[pvalsign[i,1],pvalsign[i,2]],2),
-                         "adj.P.val: ",round(res$p.val.adj[pvalsign[i,1],pvalsign[i,2]],2)))
-  }else{
-    plot(dat[,rwn2plot[i]], dat[,cn2plot[i]],
-         xlab = cn2plot[i], ylab = rwn2plot[i] ,main = paste("Spearman.\n",
-                                                             "P.val:",round(res$p.val[pvalsign[i,1],pvalsign[i,2]],2),
-                                                             "adj.P.val: ",round(res$p.val.adj[pvalsign[i,1],pvalsign[i,2]],2),
-                                                             "\n rho = ",round(cor.test(dat[,rwn2plot[i]], dat[,cn2plot[i]])$est,3) ))
-    abline(lm(dat[,cn2plot[i]] ~ dat[,rwn2plot[i]]), col = "red")
-  }
-}
-
+print(xtable(res$p.val_adj_xtable, caption = paste("Comparación biomarcadores vs variables clínicas. \\\\ {\\footnotesize",res[["legend_adjust"]]), "}"), size = "small", sanitize.text.function = function(x) x)
 
