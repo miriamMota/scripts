@@ -15,11 +15,9 @@
 ###
 ############################
 
-NAvar <- function(dataframe, maxNA = 0.8){
+NAvar <- function(df, maxNA = 80){
   na <- list()
-  na$perc <- apply(dataframe,2,function(x) sum(is.na(x))/length(x) )
+  na$perc <- sort( apply(df,2,function(x) round((sum(is.na(x))/length(x) )*100,2)) )
   na$var <- names(na$perc )[na$perc  > maxNA]
   return(na)
 }
-
-
