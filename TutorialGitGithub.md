@@ -93,7 +93,7 @@ sudo apt-get install git
 	* Que ha canviat des de l'ultim commit``` git status```
 	* ```git log```
 	* Veure canvis en els diferents commits ```git diff origin/master```
-	* Fixar proxy ```git config --global http.proxy http://conf_www.ir.vhebron.net:8081```
+	* Fixar proxy ```git config --global http.proxy http://direct_www.ir.vhebron.net:8081```
 	* [Repositoris remots](https://git-scm.com/book/es/v1/Fundamentos-de-Git-Trabajando-con-repositorios-remotos)
 
 
